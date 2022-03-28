@@ -1,0 +1,86 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: radial-gradient(circle, #f80, #f60, #f40, #f20, #f00);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    font-size: 50px;
+    text-align: center;
+    color: #ff0;
+    text-shadow: -2px 2px 2px #33f, -4px 4px 2px #00f;
+    font-family: "Indie Flower", cursive;
+  }
+}
+
+.gameMode {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+
+.choices {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  label {
+    font-weight: 500;
+    cursor: pointer;
+    color: #ff0;
+    font-size: 18px;
+    text-shadow: -2px 2px 2px #22f;
+    transition-duration: 250ms;
+  }
+  input[type="radio"]:checked + label {
+    background-color: #22f;
+    box-shadow: 0px 0px 5px 4px #22f;
+  }
+  input[type="number"] {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    background-color: #ff0;
+    color: #00f;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+  }
+}
+
+.heading {
+  font-family: "Indie Flower", cursive;
+  color: #00f;
+  font-size: 36px;
+  text-shadow: -1px 1px 2px #ff6, -2px 2px 2px #ff0;
+  margin-top: 2rem;
+}
+
+.playBtn {
+  margin-top: 2rem;
+  border: none;
+  border-radius: 8px;
+  padding: 0.25rem;
+  width: 90%;
+  font-family: "Indie Flower", cursive;
+  font-size: 30px;
+  font-weight: 700;
+  color: #00f;
+  background-color: #ff0;
+  box-shadow: -1px 3px 5px 3px #00fc;
+  cursor: pointer;
+  transition-duration: 300ms;
+}
+
+.playBtn:hover {
+  box-shadow: -2px 3px 5px 0px #00f9;
+}
