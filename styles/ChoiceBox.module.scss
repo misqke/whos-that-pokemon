@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 800px;
+  gap: 0.5rem;
+  justify-content: center;
+  margin: auto;
+}
+
+.optionBtn {
+  width: 45%;
+  border: none;
+  background-color: #00f;
+  color: #ff0;
+  padding: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 20px;
+  transition-duration: 450ms;
+}
+
+.answer {
+  background-color: #0f0;
+  color: #00f;
+}
+
+.answer:hover {
+  background-color: #0f0;
+  color: #00f;
+}
+
+.wrong {
+  background-color: #f00;
+  color: #ff0;
+}
+
+.wrong:hover {
+  background-color: #f00;
+  color: #ff0;
+}
+
+@media screen and (min-width: 800px) {
+  .optionBtn:hover {
+    background-color: #ff0;
+    color: #00f;
+  }
+}
