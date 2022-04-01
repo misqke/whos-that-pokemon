@@ -48,7 +48,7 @@ const Canvas = ({ question, hidden }) => {
         ctx.putImageData(newImage, 0, 0);
       }
     };
-  }, [hidden]);
+  }, [hidden, question]);
 
   return <canvas className={styles.canvas} ref={canvasRef}></canvas>;
 };

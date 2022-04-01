@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Canvas from "../../components/Canvas";
 import ChoiceBox from "../../components/ChoiceBox";
@@ -18,12 +18,18 @@ const Game = ({ gameMode, questionList, names }) => {
     time: 3,
   });
 
+  const reset = () => {
+    setQuestionNumber((prev) => prev + 1);
+    setAnswer("");
+    setTimer({ show: false, time: 3 });
+  };
+
   const handleAnswer = (name) => {
-    setAnswer(name);
-    setHidden(false);
     if (timer.show === true) {
       return;
     }
+    setAnswer(name);
+    setHidden(false);
     if (name.toLowerCase() === currentQuestion.answer.name.toLowerCase()) {
       setScore((prev) => prev + 1);
     }
@@ -33,15 +39,16 @@ const Game = ({ gameMode, questionList, names }) => {
         setTimer((prev) => ({ ...prev, time: prev.time - 1 }));
       }, 1000);
       setTimeout(() => {
-        setQuestionNumber((prev) => prev + 1);
-        setAnswer("");
-        setCurrentQuestion(questionList[questionNumber + 1]);
-        setHidden(true);
         clearInterval(tick);
-        setTimer({ show: false, time: 3 });
+        reset();
       }, 3000);
     }
   };
+
+  useEffect(() => {
+    setCurrentQuestion(questionList[questionNumber]);
+    setHidden(true);
+  }, [questionNumber]);
 
   return (
     <div className={styles.container}>

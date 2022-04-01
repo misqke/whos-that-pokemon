@@ -17,10 +17,10 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Who's that Pokemon</title>
+        <title>Who&apos;s that Pokemon</title>
       </Head>
       <div className={styles.content}>
-        <h1>Who's that Pokemon?</h1>
+        <h1>Who&apos;s that Pokemon?</h1>
         <div className={styles.gameMode}>
           <h2 className={styles.heading}>Game Mode</h2>
           <div className={styles.choices}>
