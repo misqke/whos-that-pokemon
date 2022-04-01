@@ -25,17 +25,7 @@
   color: #00f;
 }
 
-.answer:hover {
-  background-color: #0f0;
-  color: #00f;
-}
-
 .wrong {
-  background-color: #f00;
-  color: #ff0;
-}
-
-.wrong:hover {
   background-color: #f00;
   color: #ff0;
 }
@@ -43,6 +33,14 @@
 @media screen and (min-width: 800px) {
   .optionBtn:hover {
     background-color: #ff0;
+    color: #00f;
+  }
+  .optionBtn.wrong:hover {
+    background-color: #f00;
+    color: #ff0;
+  }
+  .optionBtn.answer:hover {
+    background-color: #0f0;
     color: #00f;
   }
 }

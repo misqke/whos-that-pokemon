@@ -21,6 +21,9 @@ const Game = ({ gameMode, questionList, names }) => {
   const handleAnswer = (name) => {
     setAnswer(name);
     setHidden(false);
+    if (timer.show === true) {
+      return;
+    }
     if (name.toLowerCase() === currentQuestion.answer.name.toLowerCase()) {
       setScore((prev) => prev + 1);
     }
@@ -86,7 +89,11 @@ export const getServerSideProps = async (context) => {
   const min = Number(num.slice(0, 3));
   const max = Number(num.slice(3));
   const res = await axios.get(
-    `http://localhost:8000/api/random/?minNum=${min}&maxNum=${max}`
+    `${
+      process.env.MODE === "development"
+        ? "http://localhost:8000"
+        : "https://misqke-pokemon-api.herokuapp.com/"
+    }/api/random/?minNum=${min}&maxNum=${max}`
   );
 
   return {

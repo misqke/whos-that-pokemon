@@ -8,6 +8,9 @@ const InputBox = ({ question, names, submit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (input.length === 0) {
+      return;
+    }
     submit(input);
     btnRef.current.classList.add(styles.disabled);
     if (input.toLowerCase() !== question.answer.name.toLowerCase()) {
