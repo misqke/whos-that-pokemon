@@ -48,7 +48,7 @@ const Game = ({ gameMode, questionList, names }) => {
   useEffect(() => {
     setCurrentQuestion(questionList[questionNumber]);
     setHidden(true);
-  }, [questionNumber]);
+  }, [questionNumber, questionList]);
 
   return (
     <div className={styles.container}>
@@ -99,7 +99,7 @@ export const getServerSideProps = async (context) => {
     `${
       process.env.MODE === "development"
         ? "http://localhost:8000"
-        : "https://misqke-pokemon-api.herokuapp.com/"
+        : "https://misqke-pokemon-api.herokuapp.com"
     }/api/random/?minNum=${min}&maxNum=${max}`
   );
 
