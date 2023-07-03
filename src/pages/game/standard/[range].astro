@@ -1,0 +1,16 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Game from "../../../components/Game";
+
+let { range } = Astro.params;
+if (range == undefined) {
+  range = "1-151";
+}
+const splitRange = range.split("-");
+const min = splitRange[0];
+const max = splitRange[1];
+---
+
+<Layout>
+  <Game min={min} max={max} client:visible />
+</Layout>

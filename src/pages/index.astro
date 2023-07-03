@@ -1,4 +1,40 @@
 ---
+import Layout from "../layouts/Layout.astro";
 ---
 
-<h1>Whos that pokemon</h1>
+<Layout>
+  <div class="container">
+    <h1>Whos that pokemon</h1>
+    <div class="flexRow">
+      <div class="flexCol">
+        <label>min</label>
+        <input id="minInput" type="number" value="1" />
+      </div>
+      <div class="flexCol">
+        <label>max</label>
+        <input id="maxInput" type="number" value="800" />
+      </div>
+    </div>
+    <button id="playBtn" type="button">PLAY</button>
+  </div>
+</Layout>
+
+<script>
+  const playBtn = document.getElementById("playBtn");
+  playBtn.onclick = () => {
+    const min = (document.getElementById("minInput") as HTMLInputElement).value;
+    const max = (document.getElementById("maxInput") as HTMLInputElement).value;
+    window.location.replace(`/game/standard/${min}-${max}`);
+  };
+</script>
+
+<style>
+  .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+</style>
