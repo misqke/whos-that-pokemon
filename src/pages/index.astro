@@ -4,31 +4,35 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
   <div class="container">
-    <h1>Whos that pokemon</h1>
+    <h1 class="heading">Whos that Pokemon?</h1>
     <div class="flexRow">
       <div class="flexCol">
-        <label>min</label>
-        <input id="minInput" type="number" value="1" />
-      </div>
-      <div class="flexCol">
-        <label>max</label>
-        <input id="maxInput" type="number" value="800" />
+        <img class="shadow small" src="charizard.png" alt="charizard" />
       </div>
     </div>
-    <button id="playBtn" type="button">PLAY</button>
+    <div class="flexCol center">
+      <div class="flexRow">
+        <div class="flexCol">
+          <label class="text" for="minInput">MIN</label>
+          <input id="minInput" type="number" value="1" min="1" />
+        </div>
+        <div class="flexCol">
+          <label class="text" for="maxInput">MAX</label>
+          <input id="maxInput" type="number" value="898" max="898" />
+        </div>
+      </div>
+      <button id="playBtn" type="button" style="max-width: fit-content;"
+        >PLAY</button
+      >
+    </div>
   </div>
 </Layout>
 
-<script>
-  const playBtn = document.getElementById("playBtn");
-  playBtn.onclick = () => {
-    const min = (document.getElementById("minInput") as HTMLInputElement).value;
-    const max = (document.getElementById("maxInput") as HTMLInputElement).value;
-    window.location.replace(`/game/standard/${min}-${max}`);
-  };
-</script>
-
 <style>
+  h1 {
+    font-size: 3rem;
+    line-height: 4.5rem;
+  }
   .container {
     width: 100%;
     height: 100%;
@@ -38,3 +42,14 @@ import Layout from "../layouts/Layout.astro";
     flex-direction: column;
   }
 </style>
+
+<script>
+  const playBtn = document.getElementById("playBtn");
+  playBtn.onclick = () => {
+    const min = (document.getElementById("minInput") as HTMLInputElement).value;
+    const max = (document.getElementById("maxInput") as HTMLInputElement).value;
+    const link = document.createElement("a");
+    link.href = `/game/${min}-${max}`;
+    link.click();
+  };
+</script>
