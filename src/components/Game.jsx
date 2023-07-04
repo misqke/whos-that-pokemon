@@ -14,7 +14,7 @@ const Game = ({ min, max }) => {
   const playAgainBtn = useRef();
 
   const getPokemon = async () => {
-    const res = await fetch("http://localhost:3000/api/getPokemon", {
+    const res = await fetch("/api/getPokemon", {
       method: "POST",
       body: JSON.stringify({ min, max, used: usedNums }),
     });
