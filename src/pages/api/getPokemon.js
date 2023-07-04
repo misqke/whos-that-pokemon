@@ -18,7 +18,7 @@ const getRandomPokemon = (min, max, used) => {
   if (used.length === range) {
     return -1;
   }
-  const available = pokemon.slice(min - 1, max + 2);
+  const available = pokemon.slice(Number(min) - 1, Number(max));
   let randomPokemon;
   do {
     let num = Math.floor(Math.random() * range + min);

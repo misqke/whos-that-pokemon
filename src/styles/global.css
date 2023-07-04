@@ -25,6 +25,7 @@ body {
   width: 100%;
   height: 100%;
   max-width: 1200px;
+  position: relative;
 }
 
 @font-face {
@@ -32,10 +33,34 @@ body {
   src: url(/fonts/pokemon/Pokemon\ Solid.ttf);
 }
 
+datalist {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+dialog {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #0001;
+  backdrop-filter: blur(3px);
+  padding: 1rem;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 400px;
+}
+
+dialog::backdrop {
+  background-color: #0001;
+}
+
 img {
   width: 100%;
   height: auto;
   transition: filter 100ms;
+  max-width: 475px;
 }
 .w-100 {
   width: 100%;
@@ -45,9 +70,8 @@ img {
 }
 
 .shadow {
+  filter: contrast(0%);
   filter: contrast(0%) brightness(-100%);
-  max-width: 100%;
-  height: auto;
   transition: filter 0ms;
 }
 .small {
@@ -72,6 +96,10 @@ img {
   flex-shrink: 1;
 }
 
+.flexCol.g-2 {
+  gap: 2rem;
+}
+
 .flexCol.center {
   align-items: center;
   justify-content: center;
@@ -93,8 +121,8 @@ img {
   text-shadow: 3px 3px 3px blue, -3px -3px 3px blue, 3px -3px 3px blue,
     -3px 3px 3px blue;
   letter-spacing: 4px;
-  font-size: 2rem;
-  line-height: 2rem;
+  font-size: 3rem;
+  line-height: 3rem;
 }
 
 .grow {
@@ -113,6 +141,11 @@ img {
   font-weight: 600;
   color: #fff;
   text-shadow: 0px 0px 3px #000;
+  font-size: 1.5rem;
+}
+
+.fs-lg {
+  font-size: 1.5rem;
 }
 
 input {
@@ -122,6 +155,7 @@ input {
   border: none;
   outline: none;
   border-radius: 5px;
+  font-size: 1.5rem;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -129,7 +163,7 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 input[type="number"] {
-  width: 50px;
+  width: 80px;
   text-align: center;
   -moz-appearance: textfield;
 }
@@ -142,19 +176,37 @@ button {
   font-weight: 600;
   padding: 0.5rem 1rem;
   border-radius: 5px;
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 1300px) {
+  img {
+    max-width: 375px !important;
+  }
+  .heading {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
 }
 
 @media screen and (max-width: 700px) {
   .heading {
     font-size: 1.5rem;
+    line-height: 1.25rem;
+  }
+  input {
+    font-size: 1rem;
+  }
+  button {
+    font-size: 1rem;
+  }
+  .text {
+    font-size: 1rem;
   }
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
+@media screen and (max-width: 375px) {
+  img {
+    max-width: 325px;
   }
 }
