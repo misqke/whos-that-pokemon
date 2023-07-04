@@ -1,5 +1,5 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Page from "../../layouts/Page.astro";
 import Game from "../../components/Game";
 
 let { range } = Astro.params;
@@ -11,6 +11,6 @@ const min = splitRange[0];
 const max = splitRange[1];
 ---
 
-<Layout>
+<Page>
   <Game min={min} max={max} client:visible />
-</Layout>
+</Page>
