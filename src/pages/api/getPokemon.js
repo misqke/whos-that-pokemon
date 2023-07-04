@@ -1,5 +1,5 @@
 import pokemon from "../../data/pokemon.json";
-console.log(pokemon.length);
+
 export const post = async ({ request }) => {
   const { min, max, used } = await request.json();
   const randomPokemon = getRandomPokemon(min, max, used);
