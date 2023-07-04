@@ -46,7 +46,7 @@ const Game = ({ min, max }) => {
   const handleNext = async () => {
     pokemonImage.current.classList.add("shadow");
     setSubmission("");
-    title.current.innerText = `Whos that Pokemon?`;
+    title.current.innerText = `Who's that Pokemon?`;
     answerRow.current.classList.remove("hidden");
     nextBtn.current.classList.add("hidden");
     await getPokemon();
@@ -71,7 +71,7 @@ const Game = ({ min, max }) => {
   return (
     <div className="flexCol">
       <h1 ref={title} className="heading text-center">
-        Whos that Pokemon?
+        Who's that Pokemon?
       </h1>
       <div className="flexCol center">
         {pokemon === null ? (
