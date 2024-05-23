@@ -24,6 +24,9 @@ const Game = ({ min, max }) => {
       setMessage(data.message);
     } else {
       setPokemon(data.pokemon);
+      setTimeout(() => {
+        pokemonImage.current.classList.remove("invis");
+      }, 200);
     }
   };
 
@@ -53,7 +56,7 @@ const Game = ({ min, max }) => {
   };
 
   const handleNext = async () => {
-    pokemonImage.current.classList.add("shadow");
+    pokemonImage.current.classList.add("shadow", "invis");
     setSubmission("");
     title.current.innerText = `Who's that Pokemon?`;
     answerRow.current.classList.remove("hidden");
@@ -79,12 +82,12 @@ const Game = ({ min, max }) => {
   }, []);
 
   return (
-    <>
+    <div>
       <div className="flexCol">
         <h1 ref={title} className="heading text-center">
           Who's that Pokemon?
         </h1>
-        <div className="flexCol center">
+        <div className="flexCol center grow">
           {pokemon === null ? (
             <div>Loading...</div>
           ) : (
@@ -132,7 +135,7 @@ const Game = ({ min, max }) => {
           </button>
         </div>
       </dialog>
-    </>
+    </div>
   );
 };
 

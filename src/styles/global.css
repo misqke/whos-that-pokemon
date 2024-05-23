@@ -17,6 +17,10 @@ body {
   justify-content: center;
 }
 
+
+.grow {
+  
+}
 .page {
   display: flex;
   flex-direction: column;
@@ -69,6 +73,10 @@ img {
   display: none !important;
 }
 
+.invis {
+  opacity: 0;
+}
+
 .shadow {
   filter: contrast(0%);
   filter: contrast(0%) brightness(-100%);
@@ -103,6 +111,7 @@ img {
 .flexCol.center {
   align-items: center;
   justify-content: center;
+  flex-grow: 1;
 }
 
 .text-center {
