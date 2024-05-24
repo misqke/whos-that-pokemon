@@ -17,10 +17,6 @@ body {
   justify-content: center;
 }
 
-
-.grow {
-  
-}
 .page {
   display: flex;
   flex-direction: column;
@@ -111,7 +107,6 @@ img {
 .flexCol.center {
   align-items: center;
   justify-content: center;
-  flex-grow: 1;
 }
 
 .text-center {
